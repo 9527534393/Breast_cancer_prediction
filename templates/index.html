@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Predictor</title>
+   
+</head>
+<body>
+<div class="plat" >
+    <h1>Breast Cancer Predictor</h1>
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+    <form method="POST" action="/predict">
+        <label><b>Universal_mean</b> =['radius_mean'+ 'texture_mean'+'perimeter_mean'+'area_mean'+ 'smoothness_mean'+ 'compactness_mean'+ 'concavity_mean'+'concave_points_mean'+ 'symmetry_mean'+ 'fractal_dimension_mean'] (Renges in 200-2800)</label><br>
+        <input type="text" name="Universal_mean"><br><br>
+
+        <label><b>universal_se</b> =['radius_se'+'texture_se'+'perimeter_se'+'area_se'+'smoothness_se'+'compactness_se'+'concavity_se'+'concave_points_se'+ 'symmetry_se'+'fractal_dimension_se'] (Ranges in 9-600)</label><br>
+        <input type="text" name="universal_se"><br><br>
+
+        <label><b>universal_worst</b> =['radius_worst'+'texture_worst'+'perimeter_worst'+'area_worst'+'smoothness_worst'+'compactness_worst'+'concavity_worst'+'concave_points_worst'+'symmetry_worst'+'fractal_dimension_worst'] (Ranges in 250-4600)</label><br>
+        <input type="text" name="universal_worst"><br><br>
+
+        
+        <input type="submit" value="Predict"><br><br>
+        
+    </form>
+</div>
+</body>
+</html>
